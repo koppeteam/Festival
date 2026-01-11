@@ -37,7 +37,7 @@ export const GALLERY_IMAGES = [
 // Logo images
 export const LOGOS = {
   karnataka: 'assets/police.png',
-  namma112: 'assets/namma112.jpg'
+  namma112: 'assets/namma.png'
 };
 
 // Emergency contacts

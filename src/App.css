@@ -461,6 +461,14 @@ input[type="file"]{ display:none; }
 .gallery-scrollable::-webkit-scrollbar {
   height: 8px;
 }
+.gallery-scrollable {
+  animation: autoScrollX 20s linear infinite;
+}
+
+/* Pause on hover (important for UX) */
+.gallery-scrollable:hover {
+  animation-play-state: paused;
+}
 .gallery-scrollable::-webkit-scrollbar-track {
   background: rgba(148,163,184,.15);
   border-radius: 10px;

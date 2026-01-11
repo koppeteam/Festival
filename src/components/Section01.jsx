@@ -1,9 +1,32 @@
 import React from 'react';
 import { useLanguage } from '../i18n/LanguageContext';
 import { GALLERY_IMAGES } from '../common/constants';
+import { useEffect, useRef } from "react";
 
 const Section01 = () => {
   const { t } = useLanguage();
+  const galleryRef = useRef(null);
+
+  useEffect(() => {
+    const gallery = galleryRef.current;
+    if (!gallery) return;
+
+    const scrollAmount = 220; // width of one image (adjust if needed)
+
+    const interval = setInterval(() => {
+      if (
+        gallery.scrollLeft + gallery.clientWidth >=
+        gallery.scrollWidth
+      ) {
+        // Reset to start when end is reached
+        gallery.scrollTo({ left: 0, behavior: "smooth" });
+      } else {
+        gallery.scrollBy({ left: scrollAmount, behavior: "smooth" });
+      }
+    }, 2000); // ⏱️ 2 seconds
+
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <section className="section" id="o1">
@@ -15,24 +38,29 @@ const Section01 = () => {
       </div>
 
       <div className="box">
-        <div className="gallery-scrollable" id="gallery">
+        <div
+          className="gallery-scrollable"
+          id="gallery"
+          ref={galleryRef}
+        >
           {GALLERY_IMAGES.map((image) => (
             <div className="thumb" key={image.id}>
-              <img 
-                src={image.url} 
+              <img
+                src={image.url}
                 alt={image.alt}
                 onError={(e) => {
-                  e.target.style.display = 'none';
-                  e.target.nextSibling.style.display = 'grid';
+                  e.target.style.display = "none";
+                  e.target.nextSibling.style.display = "grid";
                 }}
               />
-              <div className="empty" style={{ display: 'none' }}>
+              <div className="empty" style={{ display: "none" }}>
                 {t.section01.photoPlaceholder}
               </div>
             </div>
           ))}
         </div>
-        <p className="note" style={{ margin: '10px 0 0' }}>
+
+        <p className="note" style={{ margin: "10px 0 0" }}>
           {t.section01.note}
         </p>
       </div>
