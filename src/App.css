@@ -464,6 +464,12 @@ input[type="file"]{ display:none; }
 .gallery-scrollable {
   animation: autoScrollX 20s linear infinite;
 }
+.mapIcon {
+  color: #e53935;      /* Google Maps red */
+  font-size: 18px;
+  vertical-align: middle;
+  margin-right: 6px;
+}
 
 /* Pause on hover (important for UX) */
 .gallery-scrollable:hover {

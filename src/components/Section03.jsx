@@ -1,6 +1,6 @@
 import React from 'react';
 import { useLanguage } from '../i18n/LanguageContext';
-
+import { MdLocationOn } from "react-icons/md";
 const Section03 = () => {
   const { t } = useLanguage();
 
@@ -28,7 +28,7 @@ const Section03 = () => {
                       rel="noopener noreferrer"
                       target="_blank"
                     >
-                      📍 {t.section03.apmcPremises}
+                      <MdLocationOn className="mapIcon" /> {t.section03.apmcPremises}
                     </a>
                   </li>
                   <li>
@@ -37,7 +37,7 @@ const Section03 = () => {
                       rel="noopener noreferrer"
                       target="_blank"
                     >
-                      📍 {t.section03.forestParkFront}
+                      <MdLocationOn className="mapIcon" /> {t.section03.forestParkFront}
                     </a>
                   </li>
                 </ul>
@@ -51,7 +51,7 @@ const Section03 = () => {
                       rel="noopener noreferrer"
                       target="_blank"
                     >
-                      📍 {t.section03.carStand}
+                      <MdLocationOn className="mapIcon" /> {t.section03.carStand}
                     </a>
                   </li>
                   <li>
@@ -60,7 +60,7 @@ const Section03 = () => {
                       rel="noopener noreferrer"
                       target="_blank"
                     >
-                      📍 {t.section03.tractorStand}
+                      <MdLocationOn className="mapIcon" /> {t.section03.tractorStand}
                     </a>
                   </li>
                   <li>
@@ -69,7 +69,7 @@ const Section03 = () => {
                       rel="noopener noreferrer"
                       target="_blank"
                     >
-                      📍 {t.section03.juniorPUGround}
+                      <MdLocationOn className="mapIcon" /> {t.section03.juniorPUGround}
                     </a>
                   </li>
                 </ul>
@@ -84,7 +84,7 @@ const Section03 = () => {
                   rel="noopener noreferrer"
                   target="_blank"
                 >
-                  📍 {t.section03.tmsGround}
+                  <MdLocationOn className="mapIcon" /> {t.section03.tmsGround}
                 </a>
               </li>
             </ul>
@@ -101,7 +101,7 @@ const Section03 = () => {
                   rel="noopener noreferrer"
                   target="_blank"
                 >
-                  📍 {t.section03.venkatramanMath}
+                  <MdLocationOn className="mapIcon" /> {t.section03.venkatramanMath}
                 </a>
               </li>
               <li>
@@ -113,7 +113,7 @@ const Section03 = () => {
                       rel="noopener noreferrer"
                       target="_blank"
                     >
-                      📍 {t.section03.urduSchool}
+                      <MdLocationOn className="mapIcon" /> {t.section03.urduSchool}
                     </a>
                   </li>
                   <li>
@@ -122,7 +122,7 @@ const Section03 = () => {
                       rel="noopener noreferrer"
                       target="_blank"
                     >
-                      📍 {t.section03.fieldEducationOffice}
+                      <MdLocationOn className="mapIcon" /> {t.section03.fieldEducationOffice}
                     </a>
                   </li>
                 </ul>
@@ -139,7 +139,7 @@ const Section03 = () => {
                       rel="noopener noreferrer"
                       target="_blank"
                     >
-                      📍 {t.section03.motherTheresaSchool}
+                      <MdLocationOn className="mapIcon" /> {t.section03.motherTheresaSchool}
                     </a>
                   </li>
                   <li>
@@ -148,7 +148,7 @@ const Section03 = () => {
                       rel="noopener noreferrer"
                       target="_blank"
                     >
-                      📍 {t.section03.shivuKavaleLand}
+                      <MdLocationOn className="mapIcon" /> {t.section03.shivuKavaleLand}
                     </a>
                   </li>
                 </ul>
@@ -160,7 +160,7 @@ const Section03 = () => {
                   rel="noopener noreferrer"
                   target="_blank"
                 >
-                  📍 {t.section03.pwdibPark}
+                  <MdLocationOn className="mapIcon" /> {t.section03.pwdibPark}
                 </a>
               </li>
             </ul>
@@ -178,7 +178,7 @@ const Section03 = () => {
                 rel="noopener noreferrer"
                 target="_blank"
               >
-                📍 {t.section03.oldTahsildar}
+                <MdLocationOn className="mapIcon" /> {t.section03.oldTahsildar}
               </a>
             </div>
             <div className="specialItem">
@@ -188,7 +188,7 @@ const Section03 = () => {
                 rel="noopener noreferrer"
                 target="_blank"
               >
-                📍 {t.section03.newTahsildar}
+                <MdLocationOn className="mapIcon" /> {t.section03.newTahsildar}
               </a>
             </div>
           </div>
