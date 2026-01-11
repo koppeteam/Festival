@@ -64,7 +64,7 @@ export const translations = {
       tractorStand: "ಟ್ರಾಕ್ಟರ್ ಸ್ಟ್ಯಾಂಡ್",
       juniorPUGround: "ಜೂನಿಯರ್ ಪಿ ಯು ಕಾಲೇಜ್ ಮೈದಾನ",
       tmsGround: "ಟಿ ಎಮ್ ಎಸ್ ಪಕ್ಕದ ಖಾಲಿ ಮೈದಾನ (ಮುಂಡಗೋಡ ರಸ್ತೆ)",
-      venkatramanMath: "ಯಲ್ಲಾಪುರ ಕೋರ್ಟ್ ಮುಂದಿನ ವೇಂಕಟ್ರಮನ ಮಠದ ಎರಡು ಖಾಲಿ ಸ್ಥಳಗಳು",
+      venkatramanMath: "ಯಲ್ಲಾಪುರ ಕೋರ್ಟ್ ಮುಂದಿನ ವೇಂಕಟ್ರಮಣ ಮಠದ ಎರಡು ಖಾಲಿ ಸ್ಥಳಗಳು",
       urduSchool: "ಉರ್ದು ಶಾಲೆ (ಸಂಕಲ್ಪ ಕ್ರಾಸ್)",
       fieldEducationOffice: "ಕ್ಷೇತ್ರ ಶಿಕ್ಷಣ ಕಾರ್ಯಾಲಯ",
       motherTheresaSchool: "ಮದರ ಥೇರೇಸಾ ಸ್ಕೂಲ್ ಮೈದಾನ",
