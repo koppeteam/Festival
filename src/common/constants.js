@@ -4,8 +4,8 @@
 export const GALLERY_IMAGES = [
   {
     id: 1,
-    url: 'https://th.bing.com/th/id/OIP.6VZwCMNo6zVWatYacImuuwHaD3?w=300&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3',
-    alt: 'Festival Photo 1'
+    url: 'assets/jatreMap.jpeg',
+    alt: 'Festival map'
   },
   {
     id: 2,
@@ -36,8 +36,8 @@ export const GALLERY_IMAGES = [
 
 // Logo images
 export const LOGOS = {
-  karnataka: 'assets/logo1.jpg',
-  namma112: 'assets/logo2.png'
+  karnataka: 'assets/police.png',
+  namma112: 'assets/namma112.jpg'
 };
 
 // Emergency contacts
