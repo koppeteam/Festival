@@ -39,24 +39,6 @@ const Hero = () => {
           loading="lazy"
         />
       </div>
-
-      <div className="heroActions">
-        <div className="heroBtns">
-          <a
-            className="btn"
-            href={`https://youtu.be/${ytId}`}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {t.openYoutube}
-          </a>
-        </div>
-        {showYtHint && (
-          <div className="note" id="ytHint">
-            {t.youtubeError}
-          </div>
-        )}
-      </div>
     </section>
   );
 };
