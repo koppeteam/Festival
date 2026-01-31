@@ -1,41 +1,38 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useLanguage } from '../i18n/LanguageContext';
 import { GALLERY_IMAGES } from '../common/constants';
-import { useEffect, useRef } from "react";
-
-import { useState } from "react";
 
 const Section01 = () => {
   const { t } = useLanguage();
   const galleryRef = useRef(null);
+
   const [modalOpen, setModalOpen] = useState(false);
   const [modalImg, setModalImg] = useState(null);
   const [zoom, setZoom] = useState(1);
 
+  /* ================= AUTO SCROLL ================= */
   useEffect(() => {
     const gallery = galleryRef.current;
     if (!gallery) return;
 
-    const scrollAmount = 220; // width of one image (adjust if needed)
-
     const interval = setInterval(() => {
-      if (
-        gallery.scrollLeft + gallery.clientWidth >=
-        gallery.scrollWidth
-      ) {
-        // Reset to start when end is reached
-        gallery.scrollTo({ left: 0, behavior: "smooth" });
+      const width = gallery.clientWidth;
+
+      if (gallery.scrollLeft + width >= gallery.scrollWidth - 2) {
+        gallery.scrollTo({ left: 0, behavior: 'smooth' });
       } else {
-        gallery.scrollBy({ left: scrollAmount, behavior: "smooth" });
+        gallery.scrollBy({ left: width, behavior: 'smooth' });
       }
-    }, 2000); // ⏱️ 2 seconds
+    }, 2500);
 
     return () => clearInterval(interval);
   }, []);
 
+  /* ================= MODAL ================= */
   const openModal = (img) => {
     setModalImg(img);
     setZoom(1);
+    setPan({ x: 0, y: 0 });
     setModalOpen(true);
   };
 
@@ -43,13 +40,14 @@ const Section01 = () => {
     setModalOpen(false);
     setModalImg(null);
     setZoom(1);
+    setPan({ x: 0, y: 0 });
   };
 
   const handleZoom = (delta) => {
     setZoom((z) => Math.max(1, Math.min(z + delta, 4)));
   };
 
-  // For panning when zoomed
+  /* ================= PAN ================= */
   const [pan, setPan] = useState({ x: 0, y: 0 });
   const [dragging, setDragging] = useState(false);
   const [start, setStart] = useState({ x: 0, y: 0 });
@@ -59,139 +57,140 @@ const Section01 = () => {
     setDragging(true);
     setStart({ x: e.clientX - pan.x, y: e.clientY - pan.y });
   };
+
   const handleMouseMove = (e) => {
     if (!dragging) return;
-    setPan({ x: e.clientX - start.x, y: e.clientY - start.y });
+    setPan({
+      x: e.clientX - start.x,
+      y: e.clientY - start.y,
+    });
   };
+
   const handleMouseUp = () => setDragging(false);
 
-  // Reset pan on zoom reset or modal close
-  React.useEffect(() => {
+  useEffect(() => {
     if (!modalOpen || zoom === 1) setPan({ x: 0, y: 0 });
   }, [modalOpen, zoom]);
 
   return (
     <section className="section" id="o1">
       <div className="sectionHead">
-        <div>
-          <h2>{t.section01.title}</h2>
-          <p>{t.section01.description}</p>
-        </div>
+        <h2>{t.section01.title}</h2>
+        <p>{t.section01.description}</p>
       </div>
 
       <div className="box">
+        {/* ================= GALLERY ================= */}
         <div
-          className="gallery-scrollable"
-          id="gallery"
           ref={galleryRef}
+          style={{
+            display: 'flex',
+            overflowX: 'auto',
+            overflowY: 'hidden',
+            scrollSnapType: 'x mandatory',
+            scrollBehavior: 'smooth',
+            WebkitOverflowScrolling: 'touch',
+          }}
         >
           {GALLERY_IMAGES.map((image) => (
-            <div className="thumb" key={image.id} style={{ cursor: 'zoom-in' }}>
-              <img
-                src={image.url}
-                alt={image.alt}
-                onClick={() => openModal(image)}
-                onError={(e) => {
-                  e.target.style.display = "none";
-                  e.target.nextSibling.style.display = "grid";
+            <div
+              key={image.id}
+              onClick={() => openModal(image)}
+              style={{
+                flex: '0 0 100%',            // 🔒 EXACTLY 1 IMAGE
+                scrollSnapAlign: 'start',
+                height: 180,
+                padding: 12,
+                boxSizing: 'border-box',
+                cursor: 'zoom-in',
+              }}
+            >
+              <div
+                style={{
+                  width: '100%',
+                  height: '100%',
+                  background: '#fff',
+                  borderRadius: 16,
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
                 }}
-              />
-              <div className="empty" style={{ display: "none" }}>
-                {t.section01.photoPlaceholder}
+              >
+                <img
+                  src={image.url}
+                  alt={image.alt}
+                  draggable={false}
+                  style={{
+                    maxWidth: '100%',
+                    maxHeight: '100%',
+                    width: 'auto',
+                    height: 'auto',
+                    objectFit: 'contain',
+                    userSelect: 'none',
+                  }}
+                />
               </div>
             </div>
           ))}
         </div>
 
+        {/* ================= MODAL ================= */}
         {modalOpen && modalImg && (
           <div
-            style={{
-              position: 'fixed',
-              top: 0,
-              left: 0,
-              width: '100vw',
-              height: '100vh',
-              background: 'rgba(0,0,0,0.88)',
-              zIndex: 1000,
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              flexDirection: 'column',
-            }}
             onClick={closeModal}
             onMouseMove={handleMouseMove}
             onMouseUp={handleMouseUp}
             onMouseLeave={handleMouseUp}
+            style={{
+              position: 'fixed',
+              inset: 0,
+              background: 'rgba(0,0,0,0.9)',
+              zIndex: 1000,
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              padding: 16,
+            }}
           >
-            <div
-              style={{
-                position: 'relative',
-                background: 'rgba(0,0,0,0.1)',
-                borderRadius: 12,
-                padding: 16,
-                boxShadow: '0 8px 32px #000a',
-                maxWidth: '96vw',
-                maxHeight: '90vh',
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center',
-                overflow: 'hidden',
-              }}
-              onClick={e => e.stopPropagation()}
-            >
+            <div onClick={(e) => e.stopPropagation()}>
               <div
                 style={{
-                  width: '80vw',
+                  width: '90vw',
                   height: '70vh',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  overflow: 'auto',
-                  cursor: zoom > 1 ? 'grab' : 'zoom-out',
-                  position: 'relative',
-                  background: 'transparent',
+                  overflow: 'hidden',
                 }}
               >
                 <img
                   src={modalImg.url}
                   alt={modalImg.alt}
+                  draggable={false}
+                  onMouseDown={handleMouseDown}
                   style={{
                     maxWidth: '100%',
                     maxHeight: '100%',
+                    objectFit: 'contain',
                     transform: `scale(${zoom}) translate(${pan.x / zoom}px, ${pan.y / zoom}px)`,
-                    transition: dragging ? 'none' : 'transform 0.2s',
-                    borderRadius: 8,
-                    boxShadow: '0 2px 16px #0008',
-                    background: '#222',
-                    userSelect: 'none',
+                    transition: dragging ? 'none' : 'transform 0.2s ease',
+                    borderRadius: 10,
+                    background: '#111',
                   }}
-                  draggable={false}
-                  onMouseDown={handleMouseDown}
-                  onMouseUp={handleMouseUp}
-                  onMouseLeave={handleMouseUp}
                 />
               </div>
-              {/* Controls below image, not overlapping */}
+
               <div
                 style={{
-                  width: '80vw',
+                  marginTop: 18,
                   display: 'flex',
+                  gap: 12,
                   justifyContent: 'center',
-                  alignItems: 'center',
-                  gap: 16,
-                  margin: '24px auto 0',
-                  background: 'rgba(20,20,20,0.92)',
-                  borderRadius: 24,
-                  padding: '10px 24px',
-                  boxShadow: '0 2px 12px #0008',
-                  position: 'relative',
-                  zIndex: 2,
-                  maxWidth: '96vw',
                 }}
               >
-                <button className="btn small" onClick={() => handleZoom(0.25)} type="button">+</button>
-                <button className="btn small" onClick={() => handleZoom(-0.25)} type="button">-</button>
-                <a
+                <button className="btn small" onClick={() => handleZoom(0.25)}>＋</button>
+                <button className="btn small" onClick={() => handleZoom(-0.25)}>－</button>
+                  <a
                   className="btn small"
                   href={modalImg.url}
                   download
@@ -199,15 +198,15 @@ const Section01 = () => {
                   rel="noreferrer noopener"
                   style={{ textDecoration: 'none' }}
                 >
-                  ⬇️ {t.section01.download || 'Download'}
+                  ⬇ {t.section01.download || 'Download'}
                 </a>
-                <button className="btn small" onClick={closeModal} type="button">✕</button>
+                <button className="btn small" onClick={closeModal}>✕</button>
               </div>
             </div>
           </div>
         )}
 
-        <p className="note" style={{ margin: "10px 0 0" }}>
+        <p className="note" style={{ marginTop: 10 }}>
           {t.section01.note}
         </p>
       </div>
