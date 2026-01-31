@@ -196,7 +196,7 @@ const Section01 = () => {
                   href={modalImg.url}
                   download
                   target="_blank"
-                  rel="noopener"
+                  rel="noreferrer noopener"
                   style={{ textDecoration: 'none' }}
                 >
                   ⬇️ {t.section01.download || 'Download'}

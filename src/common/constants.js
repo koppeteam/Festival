@@ -8,8 +8,13 @@ export const GALLERY_IMAGES = [
     alt: 'Festival map'
   },
   {
-    id: 1,
-    url: 'assets/jatrePoster.jpeg',
+    id: 2,
+    url: 'assets/jatrePoster1.jpeg',
+    alt: 'Festival Poster'
+  },
+  {
+    id: 3,
+    url: 'assets/jatrePoster2.jpeg',
     alt: 'Festival Poster'
   },
 

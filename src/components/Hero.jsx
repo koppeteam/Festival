@@ -1,16 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { useLanguage } from '../i18n/LanguageContext';
 
 const Hero = () => {
-  const { t } = useLanguage();
-  const [showYtHint, setShowYtHint] = useState(false);
+  useLanguage();
   const ytId = 'eSEM4h2Bbq0';
 
-  useEffect(() => {
-    if (window.location.protocol === 'file:') {
-      setShowYtHint(true);
-    }
-  }, []);
+  // Removed unused showYtHint and t
 
   const buildYtSrc = () => {
     const base = `https://www.youtube-nocookie.com/embed/${ytId}`;

@@ -78,7 +78,7 @@ export const translations = {
     // Section 04
     section04: {
       title: "ತುರ್ತು ಸಂಪರ್ಕ ಸಂಖ್ಯೆಗಳು",
-      description: "ತುರ್ತು ಸಂದರ್ಭಗಳಲ್ಲಿ ಕರೆ ಮಾಡಲು ಬೇಕಾದ ನಂಬರ್‌ಗಳನ್ನು ಇಲ್ಲಿ ಇಡಿ.",
+      description: "ತುರ್ತು ಸಂದರ್ಭಗಳಲ್ಲಿ ಕರೆ ಮಾಡಲು ಬೇಕಾದ ನಂಬರ್‌ಗಳು.",
       namma112: "ನಮ್ಮ 112 (ತುರ್ತು)",
       namma112Meta: "ಪೊಲೀಸ್ / ಅಗ್ನಿಶಾಮಕ / ಆಂಬುಲೆನ್ಸ್",
       controlRoom: "ಜಾತ್ರೆ ನಿಯಂತ್ರಣ ಕೊಠಡಿ",
@@ -256,7 +256,7 @@ export const translations = {
     
     // Footer
     backToTop: "⬆️ Back to Top",
-    footerText: "Jaatre Information Center • (This webpage can be edited according to your information)",
+    footerText: "Jaatre Information Center",
     
     // Language switcher
     switchToKannada: "ಕನ್ನಡಕ್ಕೆ ಬದಲಿಸಿ"
