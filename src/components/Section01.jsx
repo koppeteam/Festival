@@ -149,6 +149,16 @@ const Section01 = () => {
               <div style={{ marginTop: 18, display: 'flex', gap: 12, justifyContent: 'center' }}>
                 <button className="btn small" onClick={() => handleZoom(0.25)}>＋</button>
                 <button className="btn small" onClick={() => handleZoom(-0.25)}>－</button>
+                <a
+                  className="btn small"
+                  href={modalImg.url}
+                  download
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  style={{ textDecoration: 'none' }}
+                >
+                  ⬇ {t.section01.download || 'Download'}
+                </a>
                 <button className="btn small" onClick={closeModal}>✕</button>
               </div>
             </div>
