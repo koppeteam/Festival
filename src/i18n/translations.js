@@ -12,7 +12,7 @@ export const translations = {
     // Navigation
     nav: {
       o1: { label: "ಚಿತ್ರಗಳು", title: "ಜಾತ್ರೆಯ ಚಿತ್ರಣ" },
-      o2: { label: "ಸಂಚಾರ", title: "ಸಂಚಾರ ಮಾಹಿತಿ ಮತ್ತು ತಿರುಗಿಸಲಾದ ಮಾರ್ಗಗಳು" },
+      o2: { label: "ಸಂಚಾರ", title: "ಸಂಚಾರ ಮಾಹಿತಿ ಮತ್ತು ಪರ್ಯಾಯ ಮಾರ್ಗಗಳು" },
       o3: { label: "ಪಾರ್ಕಿಂಗ್", title: "ಪಾರ್ಕಿಂಗ್ ಮಾಹಿತಿ" },
       o4: { label: "ತುರ್ತು", title: "ತುರ್ತು ಸಂಪರ್ಕ ಸಂಖ್ಯೆಗಳು" },
       o5: { label: "ಶೌಚಾಲಯ", title: "ಸಾರ್ವಜನಿಕ ಶೌಚಾಲಯಗಳ ಮಾಹಿತಿ" },
@@ -30,13 +30,13 @@ export const translations = {
     
     // Section 02
     section02: {
-      title: "ಸಂಚಾರ ಮಾಹಿತಿ ಮತ್ತು ತಿರುಗಿಸಲಾದ ಮಾರ್ಗಗಳು",
+      title: "ಸಂಚಾರ ಮಾಹಿತಿ ಮತ್ತು ಪರ್ಯಾಯ ಮಾರ್ಗಗಳು",
       description: "ಟ್ರಾಫಿಕ್ ಅಪ್‌ಡೇಟ್, ಡೈವರ್ಷನ್ ಮಾರ್ಗಗಳು, ಮತ್ತು ಪ್ರವೇಶ/ನಿರ್ಗಮನ ಮಾಹಿತಿ.",
       diversionTitle: "ಡೈವರ್ಷನ್ ಮಾರ್ಗಗಳು",
       route1: "ಹುಬ್ಬಳ್ಳಿ → ಅಂಕೋಲಾ:",
       route2: "ಅಂಕೋಲಾ → ಹುಬ್ಬಳ್ಳಿ:",
       heavyVehicles: "ಭಾರಿ ವಾಹನಗಳು:",
-      heavyVehiclesInfo: "ಸಂಜೆ 5:00 ರಿಂದ ಮಧ್ಯರಾತ್ರಿ 2:00 ರವರೆಗೆ ನಗರದ ಹೊರಭಾಗದಲ್ಲಿ ನಿಲುಗಡೆ ಮಾಡಬೇಕಾಗುತ್ತದೆ.",
+      heavyVehiclesInfo: "ಸಂಜೆ 5:00 ರಿಂದ ಮಧ್ಯರಾತ್ರಿ 12:00 ರವರೆಗೆ ನಗರದ ಹೊರಭಾಗದಲ್ಲಿ ನಿಲುಗಡೆ ಮಾಡಬೇಕಾಗುತ್ತದೆ.",
       viewMap: "ಮ್ಯಾಪ್ ನೋಡಿ",
       note: "ಸ್ಥಳದಲ್ಲಿನ ಪೊಲೀಸ್ ಸೂಚನೆಗಳಿಗೆ ಪ್ರಾಧಾನ್ಯತೆ ನೀಡಿ."
     },
@@ -88,7 +88,7 @@ export const translations = {
       subInspector: "ಪೊಲೀಸ್ ಸಬ್-ಇನ್ಸ್‌ಪೆಕ್ಟರ್",
       hospital: "ಆಸ್ಪತ್ರೆ / ಫಸ್ಟ್ ಎಯ್ಡ್",
       call: "ಕರೆ ಮಾಡಿ",
-      note: "⚠️ ತುರ್ತು ಸಂದರ್ಭಗಳಲ್ಲಿ ನಮ್ಮ 112 ಅನ್ನು ಕೂಡ ಸಂಪರ್ಕಿಸಬಹುದು."
+      note: "⚠️ ತುರ್ತು ಸಂದರ್ಭಗಳಲ್ಲಿ ನಮ್ಮ ಜಾತ್ರೆ ನಿಯಂತ್ರಣ ಕೊಠಡಿಯನ್ನು ಕೂಡ ಸಂಪರ್ಕಿಸಬಹುದು."
     },
     
     // Section 05
@@ -97,7 +97,7 @@ export const translations = {
       description: "ಶೌಚಾಲಯ ಸ್ಥಳ, ಸಮಯ, ಮತ್ತು ಮಾರ್ಗ ಸೂಚನೆ.",
         toiletPoint: "ಶೌಚಾಲಯ ಸ್ಥಳ",
         point1: {
-          label: "ಬಸ್ ಸ್ಟ್ಯಾಂಡ್ ಹತ್ತಿರ (ಪುರುಷ/ಮಹಿಳೆ)",
+          label: "ಬಸ್ ಸ್ಟ್ಯಾಂಡ್ ಹತ್ತಿರ",
           map: "https://maps.app.goo.gl/An2QJTbjMp3KHnqTA"
         },
         point2: {
@@ -125,7 +125,7 @@ export const translations = {
     
     // Footer
     backToTop: "⬆️ ಮೇಲಕ್ಕೆ ಹೋಗಿ",
-    footerText: "ಜಾತ್ರಾ ಮಾಹಿತಿ ಕೇಂದ್ರ",
+    footerText: "ಜಾತ್ರಾ ಮಾಹಿತಿ ಕೇಂದ್ರ • NexusSpherical Technologies",
     
     // Language switcher
     switchToEnglish: "Switch to English"
@@ -168,7 +168,7 @@ export const translations = {
       route1: "Hubballi → Ankola:",
       route2: "Ankola → Hubballi:",
       heavyVehicles: "Heavy Vehicles:",
-      heavyVehiclesInfo: "Must be parked outside the city from 5:00 PM to 2:00 AM.",
+      heavyVehiclesInfo: "Must be parked outside the city from 5:00 PM to 12:00 AM.",
       viewMap: "View Map",
       note: "Follow on-site police instructions."
     },
@@ -213,14 +213,14 @@ export const translations = {
       description: "Numbers to call in emergency situations.",
       namma112: "Namma 112 (Emergency)",
       namma112Meta: "Police / Fire / Ambulance",
-      controlRoom: "Festival Control Room",
+      controlRoom: "Control Room",
       gaddigeOutpost: "Gaddige Outpost",
       amusementOutpost: "Amusement Jaatre Outpost",
       inspector: "Inspector",
       subInspector: "Police Sub-Inspector",
       hospital: "Hospital / First Aid",
       call: "Call",
-      note: "⚠️ In emergencies, you can also contact Namma 112."
+      note: "⚠️ In emergencies, you can also contact Control Room."
     },
     
     // Section 05
@@ -229,7 +229,7 @@ export const translations = {
       description: "Toilet locations, timings, and directions.",
         toiletPoint: "Toilet Point",
         point1: {
-          label: "Near Bus Stand (Male/Female)",
+          label: "Near Bus Stand",
           map: "https://maps.app.goo.gl/An2QJTbjMp3KHnqTA"
         },
         point2: {
@@ -256,7 +256,7 @@ export const translations = {
     
     // Footer
     backToTop: "⬆️ Back to Top",
-    footerText: "Jaatre Information Center",
+    footerText: "Information Center • NexusSpherical Technologies",
     
     // Language switcher
     switchToKannada: "ಕನ್ನಡಕ್ಕೆ ಬದಲಿಸಿ"

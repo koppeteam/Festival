@@ -130,6 +130,8 @@ const Section01 = () => {
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
+                  position: 'relative',
+                  overflow: 'hidden',
                 }}
               >
                 <img
@@ -146,19 +148,7 @@ const Section01 = () => {
                 />
               </div>
 
-              <div style={{ marginTop: 18, display: 'flex', gap: 12, justifyContent: 'center' }}>
-                <button className="btn small" onClick={() => handleZoom(0.25)}>＋</button>
-                <button className="btn small" onClick={() => handleZoom(-0.25)}>－</button>
-                <a
-                  className="btn small"
-                  href={modalImg.url}
-                  download
-                  target="_blank"
-                  rel="noreferrer noopener"
-                  style={{ textDecoration: 'none' }}
-                >
-                  ⬇ {t.section01.download || 'Download'}
-                </a>
+              <div style={{ marginTop: 18, display: 'flex', gap: 12, justifyContent: 'center' }} onClick={(e) => e.stopPropagation()}>
                 <button className="btn small" onClick={closeModal}>✕</button>
               </div>
             </div>
