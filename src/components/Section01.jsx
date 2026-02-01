@@ -50,8 +50,6 @@ const Section01 = () => {
     setZoom(1);
   };
 
-  const handleZoom = (d) => setZoom((z) => Math.max(1, Math.min(z + d, 4)));
-
   return (
     <section className="section" id="o1">
      <div className="sectionHead">
